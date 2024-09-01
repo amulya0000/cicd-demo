@@ -13,15 +13,15 @@ jobs:
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          username: ${{ secrets.amulya12 }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build, tag, and push image to DockerHub
         env:
-          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          IMAGE_NAME: my-image
+          DOCKERHUB_USERNAME: ${{ secrets.amulya12 }}
+          IMAGE_NAME: python
         run: |
-          docker build -t $DOCKERHUB_USERNAME/$IMAGE_NAME .
-          docker push $DOCKERHUB_USERNAME/$IMAGE_NAME:latest
+          docker build -t amulya12/python .
+          docker push amulya12/python:latest
 
   test:
     runs-on: ubuntu-latest
